@@ -13,8 +13,21 @@ const BillProvider = ({ children }) => {
     console.log(bills);
   }, [bills]);
 
+  const orderAlphabetically = bills => {
+    return bills.sort((a, b) =>
+      a.title.toUpperCase() < b.title.toUpperCase() ? -1 : 0
+    );
+  };
+
   const updateBills = bill => {
-    const updatedBills = [...bills, bill];
+    const updatedBills = orderAlphabetically([...bills, bill]);
+    localStorage.setItem('expense-bills', JSON.stringify(updatedBills));
+    setBills(updatedBills);
+  };
+
+  const editBills = billToEdit => {
+    const otherBills = bills.filter(bill => bill.title !== billToEdit.title);
+    const updatedBills = orderAlphabetically([...otherBills, billToEdit]);
     localStorage.setItem('expense-bills', JSON.stringify(updatedBills));
     setBills(updatedBills);
   };
@@ -23,7 +36,8 @@ const BillProvider = ({ children }) => {
     <BillContext.Provider
       value={{
         bills,
-        updateBills
+        updateBills,
+        editBills
       }}
     >
       {children}

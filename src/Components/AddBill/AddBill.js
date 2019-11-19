@@ -2,13 +2,12 @@ import React, { useContext, useState } from 'react';
 import './style.css';
 import { BillContext } from '../../Context/BillContext';
 
-
 const AddBill = () => {
   const [newBillTitle, setNewBillTitle] = useState('');
   const [newBillCost, setNewBillCost] = useState('');
 
-  const {updateBills} = useContext(BillContext)
-  
+  const { updateBills } = useContext(BillContext);
+
   const billObjectValid = () => {
     // newBillCost is not empty and is a number
     const costValid = newBillCost && Number.parseFloat(newBillCost);
@@ -16,7 +15,7 @@ const AddBill = () => {
     // newBillTitle is not empty and does not have all white spaces
     const titleValid =
       newBillTitle && newBillTitle.split('').find(char => char !== ' ');
-      
+
     return titleValid && costValid;
   };
 
@@ -32,8 +31,9 @@ const AddBill = () => {
           e.preventDefault();
           if (billObjectValid()) {
             updateBills({
-              newBillTitle,
-              newBillCost
+              title: newBillTitle,
+              monthlyCost: newBillCost,
+              enabled: true
             });
             clearForm();
           }
