@@ -9,5 +9,11 @@
 }
 
 .bill-list-row-content {
-  display: inline;
+  display: inline-block;
+}
+.edit-mode-btn {
+  cursor: pointer;
+}
+.edit-mode-btn:hover {
+  color: blue;
 }

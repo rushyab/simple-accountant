@@ -4,6 +4,7 @@ const BillContext = createContext();
 
 const BillProvider = ({ children }) => {
   const [bills, setBills] = useState([]);
+  const [selectedCostInterval, setSelectedCostInterval] = useState('Monthly');
 
   useEffect(() => {
     setBills(JSON.parse(localStorage.getItem('expense-bills')) || []);
@@ -37,7 +38,8 @@ const BillProvider = ({ children }) => {
       value={{
         bills,
         updateBills,
-        editBills
+        editBills,
+        selectedCostInterval
       }}
     >
       {children}
