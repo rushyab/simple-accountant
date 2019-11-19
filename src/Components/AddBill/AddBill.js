@@ -1,10 +1,14 @@
 import React, { useContext, useState } from 'react';
 import './style.css';
+import { BillContext } from '../../Context/BillContext';
+
 
 const AddBill = () => {
   const [newBillTitle, setNewBillTitle] = useState('');
   const [newBillCost, setNewBillCost] = useState('');
 
+  const {updateBills} = useContext(BillContext)
+  
   const billObjectValid = () => {
     // newBillCost is not empty and is a number
     const costValid = newBillCost && Number.parseFloat(newBillCost);
@@ -14,10 +18,6 @@ const AddBill = () => {
       newBillTitle && newBillTitle.split('').find(char => char !== ' ');
       
     return titleValid && costValid;
-  };
-
-  const updateBill = () => {
-    console.log(newBillTitle, newBillCost);
   };
 
   const clearForm = () => {
@@ -31,7 +31,10 @@ const AddBill = () => {
         onSubmit={e => {
           e.preventDefault();
           if (billObjectValid()) {
-            updateBill();
+            updateBills({
+              newBillTitle,
+              newBillCost
+            });
             clearForm();
           }
         }}
