@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import './style.css';
-import { BillContext } from '../../Context/BillContext';
+import { BillContext } from '../Context/BillContext';
 
 const AddBill = () => {
   const [newBillTitle, setNewBillTitle] = useState('');
@@ -25,7 +24,7 @@ const AddBill = () => {
   };
 
   return (
-    <div className="add-bill-container">
+    <div className="container" style={{maxWidth:"400px"}}>
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -42,18 +41,18 @@ const AddBill = () => {
         <input
           type="text"
           placeholder="Enter bill title"
-          className="add-bill-form-control form-control"
+          className="text-center w-100 p-2 mb-3 form-control"
           onChange={e => setNewBillTitle(e.target.value)}
           value={newBillTitle}
         />
         <input
           type="number"
           placeholder="Enter bill montly cost"
-          className="add-bill-form-control form-control"
+          className="text-center w-100 p-2 mb-3 form-control"
           onChange={e => setNewBillCost(e.target.value)}
           value={newBillCost}
         />
-        <button type="submit" className="add-bill-form-control btn btn-primary">
+        <button type="submit" className="text-center w-100 p-2 mb-2 btn btn-dark">
           Add Bill
         </button>
       </form>

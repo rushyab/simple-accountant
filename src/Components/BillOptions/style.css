@@ -14,7 +14,7 @@
   text-shadow: 1px 1px 1px gray;
 }
 .selected-interval {
-  color: gold;
+  color: #ffc107;
   text-shadow: 1px 1px 1px gray;
   font-weight: 700;
   display: inline-block;

@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { BillContext } from '../../Context/BillContext';
-import './style.css';
+import React, { useContext } from 'react';
+import { BillContext } from '../Context/BillContext';
 
 const BillTotal = () => {
   const { bills, selectedCostInterval } = useContext(BillContext);
@@ -28,11 +27,11 @@ const BillTotal = () => {
   };
 
   return (
-    <>
-      <div className="bill-total-container">
+    <div className="mx-auto text-center" style={{maxWidth: "400px"}} >
+      <div className="h3 my-2 ">
         {selectedCostInterval} bill cost:
-        <span className="total-cost">
-          {'$' +
+        <span className="font-weight-bold">
+          {' $ ' +
             bills
               .reduce((acc, val) => {
                 return val.enabled
@@ -42,10 +41,10 @@ const BillTotal = () => {
               .toFixed(2)}
         </span>
       </div>
-      <div className="total-saved-container">
+      <div className="h3 my-2">
         {selectedCostInterval} saved:
-        <span className="total-saved">
-          {'$' +
+        <span className="font-weight-bolder">
+          {' $ ' +
             bills
               .reduce((acc, val) => {
                 return !val.enabled
@@ -55,7 +54,7 @@ const BillTotal = () => {
               .toFixed(2)}
         </span>
       </div>
-    </>
+    </div>
   );
 };
 
