@@ -42,6 +42,19 @@ const BillTotal = () => {
               .toFixed(2)}
         </span>
       </div>
+      <div className="total-saved-container">
+        {selectedCostInterval} saved:
+        <span className="total-saved">
+          {'$' +
+            bills
+              .reduce((acc, val) => {
+                return !val.enabled
+                  ? moneyInteralTransform(val.monthlyCost) + acc
+                  : acc;
+              }, 0)
+              .toFixed(2)}
+        </span>
+      </div>
     </>
   );
 };

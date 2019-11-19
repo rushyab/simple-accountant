@@ -39,7 +39,8 @@ const BillProvider = ({ children }) => {
         bills,
         updateBills,
         editBills,
-        selectedCostInterval
+        selectedCostInterval,
+        setSelectedCostInterval
       }}
     >
       {children}
