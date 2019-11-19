@@ -6,7 +6,7 @@ const AddBill = () => {
   const [newBillTitle, setNewBillTitle] = useState('');
   const [newBillCost, setNewBillCost] = useState('');
 
-  const { updateBills } = useContext(BillContext);
+  const { updateBill } = useContext(BillContext);
 
   const billObjectValid = () => {
     // newBillCost is not empty and is a number
@@ -30,7 +30,7 @@ const AddBill = () => {
         onSubmit={e => {
           e.preventDefault();
           if (billObjectValid()) {
-            updateBills({
+            updateBill({
               title: newBillTitle,
               monthlyCost: newBillCost,
               enabled: true

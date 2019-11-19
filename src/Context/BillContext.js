@@ -5,14 +5,11 @@ const BillContext = createContext();
 const BillProvider = ({ children }) => {
   const [bills, setBills] = useState([]);
   const [selectedCostInterval, setSelectedCostInterval] = useState('Monthly');
+  const [editModeEnabled, setEditModeEnabled] = useState(false);
 
   useEffect(() => {
     setBills(JSON.parse(localStorage.getItem('expense-bills')) || []);
   }, [setBills]);
-
-  useEffect(() => {
-    console.log(bills);
-  }, [bills]);
 
   const orderAlphabetically = bills => {
     return bills.sort((a, b) =>
@@ -20,27 +17,36 @@ const BillProvider = ({ children }) => {
     );
   };
 
-  const updateBills = bill => {
+  const updateBill = bill => {
     const updatedBills = orderAlphabetically([...bills, bill]);
     localStorage.setItem('expense-bills', JSON.stringify(updatedBills));
     setBills(updatedBills);
   };
 
-  const editBills = billToEdit => {
+  const editBill = billToEdit => {
     const otherBills = bills.filter(bill => bill.title !== billToEdit.title);
     const updatedBills = orderAlphabetically([...otherBills, billToEdit]);
     localStorage.setItem('expense-bills', JSON.stringify(updatedBills));
     setBills(updatedBills);
   };
 
+  const deleteBill = (billToDelete) => {
+    const filteredBills = bills.filter(bill => bill.title !== billToDelete.title);
+    localStorage.setItem('expense-bills', JSON.stringify(filteredBills));
+    setBills(filteredBills);
+  }
+
   return (
     <BillContext.Provider
       value={{
         bills,
-        updateBills,
-        editBills,
+        updateBill,
+        editBill,
         selectedCostInterval,
-        setSelectedCostInterval
+        setSelectedCostInterval,
+        editModeEnabled,
+        setEditModeEnabled,
+        deleteBill
       }}
     >
       {children}
