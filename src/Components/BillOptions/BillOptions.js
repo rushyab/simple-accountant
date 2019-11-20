@@ -19,6 +19,14 @@ const BillOptions = () => {
       </div>
       <div
         className={
+          selectedCostInterval === 'Weekly' ? 'selected-interval' : 'interval'
+        }
+        onClick={e => setSelectedCostInterval(e.target.innerText)}
+      >
+        Weekly
+      </div>
+      <div
+        className={
           selectedCostInterval === 'Monthly' ? 'selected-interval' : 'interval'
         }
         onClick={e => setSelectedCostInterval(e.target.innerText)}

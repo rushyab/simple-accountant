@@ -8,7 +8,7 @@ const EditBills = () => {
   return (
     <div className="container" style={{ maxWidth: '600px' }}>
       <div
-        className="btn btn-warning"
+        className="btn btn-dark text-warning"
         onClick={() => setEditModeEnabled(false)}
         style={{ cursor: 'pointer' }}
       >
@@ -31,7 +31,7 @@ const EditBills = () => {
             <div className="col-6">
               <input
                 type="number"
-                className="rounded p-1 w-75"
+                className="rounded p-1 w-75 mx-2"
                 value={bill.monthlyCost}
                 onChange={e =>
                   editBill({
@@ -44,7 +44,7 @@ const EditBills = () => {
             </div>
             <div className="col-3">
               <div
-                className="btn btn-danger"
+                className="btn btn-danger text-dark"
                 onClick={() => {
                   deleteBill(bill);
                   if (bills.length === 1) setEditModeEnabled(false);

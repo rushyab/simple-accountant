@@ -52,7 +52,7 @@ const AddBill = () => {
           onChange={e => setNewBillCost(e.target.value)}
           value={newBillCost}
         />
-        <button type="submit" className="text-center w-100 p-2 mb-2 btn btn-dark">
+        <button type="submit" className="text-center w-100 p-2 mb-2 btn btn-dark text-warning">
           Add Bill
         </button>
       </form>

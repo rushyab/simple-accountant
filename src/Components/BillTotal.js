@@ -27,31 +27,33 @@ const BillTotal = () => {
   };
 
   return (
-    <div className="mx-auto text-center" style={{maxWidth: "400px"}} >
+    <div className="mx-auto text-center" style={{ maxWidth: '400px' }}>
       <div className="h3 my-2 ">
         {selectedCostInterval} bill cost:
         <span className="font-weight-bold">
-          {' $ ' +
-            bills
-              .reduce((acc, val) => {
-                return val.enabled
-                  ? moneyInteralTransform(val.monthlyCost) + acc
-                  : acc;
-              }, 0)
-              .toFixed(2)}
+          {' '}
+          &#8360;{' '}
+          {bills
+            .reduce((acc, val) => {
+              return val.enabled
+                ? moneyInteralTransform(val.monthlyCost) + acc
+                : acc;
+            }, 0)
+            .toFixed(2)}
         </span>
       </div>
       <div className="h3 my-2">
         {selectedCostInterval} saved:
         <span className="font-weight-bolder">
-          {' $ ' +
-            bills
-              .reduce((acc, val) => {
-                return !val.enabled
-                  ? moneyInteralTransform(val.monthlyCost) + acc
-                  : acc;
-              }, 0)
-              .toFixed(2)}
+          {' '}
+          &#8360;{' '}
+          {bills
+            .reduce((acc, val) => {
+              return !val.enabled
+                ? moneyInteralTransform(val.monthlyCost) + acc
+                : acc;
+            }, 0)
+            .toFixed(2)}
         </span>
       </div>
     </div>
