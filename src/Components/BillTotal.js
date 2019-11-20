@@ -27,7 +27,7 @@ const BillTotal = () => {
   };
 
   return (
-    <div className="mx-auto text-center" style={{ maxWidth: '400px' }}>
+    <div className="mx-auto text-center" style={{ maxWidth: '450px' }}>
       <div className="h3 my-2 ">
         {selectedCostInterval} bill cost:
         <span className="font-weight-bold">

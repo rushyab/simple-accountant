@@ -9,7 +9,7 @@ const BillList = () => {
       {bills.length === 0 ? (
         <></>
       ) : (
-        <div className="container" style={{ maxWidth: '300px' }}>
+        <div className="container" style={{ maxWidth: '400px' }}>
           <div
             className="btn btn-dark text-warning my-3"
             onClick={() => setEditModeEnabled(true)}

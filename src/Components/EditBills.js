@@ -6,7 +6,7 @@ const EditBills = () => {
     BillContext
   );
   return (
-    <div className="container" style={{ maxWidth: '600px' }}>
+    <div>
       <div
         className="btn btn-dark text-warning"
         onClick={() => setEditModeEnabled(false)}
@@ -25,13 +25,13 @@ const EditBills = () => {
         {bills.map((bill, index) => (
           <div key={index} className="row my-3">
             {/* <div className=""> */}
-            <div className="col-3">
+            <div className="col-md-5 col-12">
               <p className="lead">{bill.title}</p>
             </div>
-            <div className="col-6">
+            <div className="col-md-5 col-8">
               <input
                 type="number"
-                className="rounded p-1 w-75 mx-2"
+                className="rounded p-1 w-100 border-warning"
                 value={bill.monthlyCost}
                 onChange={e =>
                   editBill({
@@ -42,7 +42,7 @@ const EditBills = () => {
                 }
               />
             </div>
-            <div className="col-3">
+            <div className="col-md-2 col-4">
               <div
                 className="btn btn-danger text-dark"
                 onClick={() => {

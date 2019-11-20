@@ -24,7 +24,7 @@ const AddBill = () => {
   };
 
   return (
-    <div className="container" style={{maxWidth:"400px"}}>
+    <div className="container" style={{maxWidth:"450px"}}>
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -41,14 +41,14 @@ const AddBill = () => {
         <input
           type="text"
           placeholder="Enter bill title"
-          className="text-center w-100 p-2 mb-3 form-control"
+          className="text-center w-100 p-2 mb-3 form-control border-warning"
           onChange={e => setNewBillTitle(e.target.value)}
           value={newBillTitle}
         />
         <input
           type="number"
           placeholder="Enter bill montly cost"
-          className="text-center w-100 p-2 mb-3 form-control"
+          className="text-center w-100 p-2 mb-3 form-control border-warning"
           onChange={e => setNewBillCost(e.target.value)}
           value={newBillCost}
         />

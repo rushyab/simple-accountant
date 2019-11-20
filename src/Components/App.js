@@ -10,13 +10,13 @@ import EditBills from './EditBills';
 const App = () => {
   const { editModeEnabled } = useContext(BillContext);
   return (
-    <div className="vh-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
-      <div className="container h-100 pt-3 pt-lg-5 text-light">
+    <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', minHeight: "100vh" }}>
+      <div className="container py-4 text-light">
         <div
           className="p-4 mx-auto"
           style={{
             boxShadow: '0 0 15px black',
-            maxWidth: "500px",
+            maxWidth: "550px",
             backgroundColor: 'rgba(0, 0, 0, 0.5)'
           }}
         >
