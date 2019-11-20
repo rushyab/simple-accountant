@@ -4,7 +4,7 @@ A simple react app that tracks your expenses, and helps you practice conscious s
 
 [Live](https://simple-accountant.herokuapp.com/)
 
-[![image](https://user-images.githubusercontent.com/22884683/69241529-0646fd80-0bc5-11ea-9ea8-de1bfcafcbb0.png)](https://simple-accountant.herokuapp.com/)
+[![image](https://user-images.githubusercontent.com/22884683/69247768-ffbe8300-0bd0-11ea-9074-08fe6bafd399.png)](https://simple-accountant.herokuapp.com/)
 
 #### Concepts Learned:
 
