@@ -1,5 +1,5 @@
 # Simple Accountant
-A simple react app that calculates your bills and helps you practice conscious spending.
+A simple react app that tracks your expenses, and helps you practice conscious spending.
 
 #### Concepts Learned: 
 - Context API
